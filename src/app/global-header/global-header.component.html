@@ -1,0 +1,26 @@
+<header class="header">
+  <a class="logo" routerLink="/">MyApp</a>
+
+  <nav #nav class="primary" aria-label="Main navigation">
+    <span
+      class="navpill"
+      [style.width.px]="pillWidth"
+      [style.height.px]="pillHeight"
+      [style.transform]="pillTransform"
+      [style.opacity]="pillVisible ? 1 : 0"
+      aria-hidden="true">
+    </span>
+
+    <a
+      *ngFor="let link of links"
+      [routerLink]="link.path"
+      routerLinkActive="active"
+      #rla="routerLinkActive"
+      [routerLinkActiveOptions]="{ exact: true }"
+      (pointerenter)="onHover($event)"
+      (pointerleave)="onLeave()"
+      [class.active]="rla.isActive">
+      {{ link.label }}
+    </a>
+  </nav>
+</header>

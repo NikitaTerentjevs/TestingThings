@@ -1,0 +1,75 @@
+
+:host {
+  display: block;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: transparent;
+  background-image: url('/trianglify-3.png');
+  background-size: cover;  
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.primary {
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.primary a {
+  position: relative;
+  z-index: 1;
+  padding: 10px 16px;
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: color 200ms ease;
+}
+
+.primary a:hover,
+.primary a.active {
+  color: white;
+}
+
+.navpill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  border-radius: 999px;
+  background: #9fbefd;
+  pointer-events: none;
+
+  transition:
+    transform 250ms ease,
+    width 250ms ease,
+    height 250ms ease,
+    opacity 150ms ease;
+}
+
+.navpill.instant {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navpill,
+  .primary a {
+    transition: none;
+  }
+}

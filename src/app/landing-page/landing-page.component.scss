@@ -1,0 +1,47 @@
+.trustbar{
+    background:linear-gradient(90deg,#0a3a8f,#0b409c 50%,#0a3a8f);
+    // background-color:red;
+    padding:30px 0; 
+    position:relative;
+    overflow:hidden;
+
+    .trustitem {
+        text-align:center;
+        color:#fff;
+
+        .num{
+            font-family:"Manrope"; 
+            font-weight:700;
+            font-size:clamp(22px,2.6vw,30px); 
+            color:#fff;
+
+            font-weight:800;
+            letter-spacing:-.02em;
+        }
+
+        .lbl { 
+            font-size:12px; 
+            color:rgba(255,255,255,.65); 
+            margin-top:4px; 
+            letter-spacing:.02em;
+
+        }
+    }
+
+}
+
+  @media (min-width:901px){
+    .trustitem + .trustitem{
+        border-left:1px solid rgba(255,255,255,.08);
+    } 
+}
+  .trustgrid{
+    display:grid; 
+    grid-template-columns:repeat(5,1fr); 
+    gap:18px;
+}
+  @media (max-width:900px){
+    .trustgrid{
+        grid-template-columns:repeat(2,1fr);
+    } 
+}
